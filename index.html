@@ -216,33 +216,52 @@ document.getElementById('order-form').addEventListener('submit', async function(
         total: document.getElementById('cart-total').innerText
     };
 
-    try {
-        const BIN_ID = "691077dcae596e708f4e1c1f";
-        const ACCESS_KEY = "$2a$10$bxxlxssPwJVBtychZmwPU.YXXXEHOOu6Y8LaHu1x8jGsTFlz/es7.";
+   try {
+    const BIN_ID = "691077dcae596e708f4e1c1f";
+    const ACCESS_KEY = "$2a$10$bxxlxssPwJVBtychZmwPU.YXXXEHOOu6Y8LaHu1x8jGsTFlz/es7.";
 
-        const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Master-Key': ACCESS_KEY
-            },
-            body: JSON.stringify(orderData)
-        });
-        if(response.ok){
-            alert("تم إرسال الطلب بنجاح!");
-            cart = [];
-            updateCart();
-            document.getElementById('order-form').reset();
-        } else {
-            alert("حدث خطأ أثناء إرسال الطلب.");
+    // 1️⃣ جلب البيانات القديمة أولاً
+    const getResponse = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+        headers: {
+            "X-Master-Key": ACCESS_KEY,
+            "X-Bin-Meta": "false"
         }
-    } catch (error) {
-        console.error(error);
-        alert("حدث خطأ أثناء إرسال الطلب.");
+    });
+
+    if (!getResponse.ok) throw new Error("فشل في جلب البيانات القديمة");
+
+    const oldData = await getResponse.json();
+    const orders = oldData.orders || [];
+
+    // 2️⃣ إضافة الطلب الجديد
+    orders.push(orderData);
+
+    // 3️⃣ تحديث الملف كاملاً
+    const updateResponse = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "X-Master-Key": ACCESS_KEY
+        },
+        body: JSON.stringify({ orders })
+    });
+
+    if (updateResponse.ok) {
+        alert("✅ تم إرسال الطلب بنجاح!");
+        cart = [];
+        updateCart();
+        document.getElementById('order-form').reset();
+    } else {
+        throw new Error("فشل أثناء تحديث البيانات");
     }
-});
+
+} catch (error) {
+    console.error("❌ خطأ أثناء الحفظ:", error);
+    alert("⚠️ حدث خطأ أثناء إرسال الطلب. تأكد من BIN ID و ACCESS KEY.");
+}
 </script>
 
 </body>
 </html>
+
 
