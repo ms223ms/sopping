@@ -259,9 +259,28 @@ document.getElementById('order-form').addEventListener('submit', async function(
     console.error("❌ خطأ أثناء الحفظ:", error);
     alert("⚠️ حدث خطأ أثناء إرسال الطلب. تأكد من BIN ID و ACCESS KEY.");
 }
+    // إنشاء رسالة الفاتورة
+let message = `🧾 *طلب جديد من موقع اللحوم* %0A`;
+message += `👤 الاسم: ${orderData.name}%0A`;
+message += `📞 الهاتف: ${orderData.phone}%0A`;
+message += `🏠 العنوان: ${orderData.address}%0A`;
+message += `🏙️ المحافظة: ${orderData.governorate}%0A%0A`;
+message += `📦 *المنتجات:* %0A`;
+
+orderData.items.forEach(item => {
+  message += `- ${item.name} × ${item.qty} = ${item.price * item.qty} جنيه%0A`;
+});
+
+message += `%0A💰 *الإجمالي:* ${orderData.total} جنيه%0A`;
+message += `%0A📅 التاريخ: ${new Date().toLocaleString('ar-EG')}`;
+
+// إرسال عبر واتساب إلى الرقم المحدد
+const whatsappNumber = "01120194940";
+window.open(`https://wa.me/2${whatsappNumber}?text=${message}`, "_blank");
 </script>
 
 </body>
 </html>
+
 
 
