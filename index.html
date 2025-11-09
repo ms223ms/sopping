@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيع اللحوم الطازجة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Almarai', sans-serif;
+        }
+
+        body {
+            background-color: #fff8f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #c62828;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        .section {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #c62828;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #c62828;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .product {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+            color: #c62828;
+        }
+
+        .product p {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            background-color: #c62828;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .buy-btn:hover {
+            background-color: #e53935;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact a {
+            color: white;
+            background-color: #25D366;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #eee;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>بيع اللحوم الطازجة</h1>
+        <p>أفضل جودة وأسعار منافسة</p>
+    </header>
+
+    <section class="section">
+        <h2>🔸 اللحوم والدواجن</h2>
+        <div class="products">
+            <div class="product">
+                <h3>لحمة ضاني</h3>
+                <p>450 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('لحمة ضاني', 450)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>ريش ضاني</h3>
+                <p>450 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('ريش ضاني', 450)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>فخدة ضاني</h3>
+                <p>450 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('فخدة ضاني', 450)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كتف ضاني</h3>
+                <p>420 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كتف ضاني', 420)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>ليه ضاني</h3>
+                <p>350 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('ليه ضاني', 350)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>طرب ضاني</h3>
+                <p>350 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('طرب ضاني', 350)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>مخاصي ضاني</h3>
+                <p>350 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('مخاصي ضاني', 350)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>سجق فراخ</h3>
+                <p>210 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('سجق فراخ', 210)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كفتة فراخ</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة فراخ', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>همبورجر فراخ</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('همبورجر فراخ', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>حواوشي فراخ</h3>
+                <p>150 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('حواوشي فراخ', 150)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>استربس فراخ</h3>
+                <p>150 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('استربس فراخ', 150)">اطلب الآن</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🔸 الكفتة واللحوم المشكلة</h2>
+        <div class="products">
+            <div class="product">
+                <h3>كفتة حواوشي</h3>
+                <p>90 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة حواوشي', 90)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كفتة حواوشي مخصوص</h3>
+                <p>150 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة حواوشي مخصوص', 150)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كفتة عادية</h3>
+                <p>160 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة عادية', 160)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كفتة كندوز</h3>
+                <p>190 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة كندوز', 190)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كفتة ضاني</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة ضاني', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كفتة اسبيشيال</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة اسبيشيال', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كتف الطرب</h3>
+                <p>350 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كتف الطرب', 350)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>سجق</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('سجق', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>سجق اسكندراني</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('سجق اسكندراني', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>سجق أرز ممبار</h3>
+                <p>150 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('سجق أرز ممبار', 150)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>همبورجر</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('همبورجر', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>همبورجر موتزاريلا</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('همبورجر موتزاريلا', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كلاوي</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كلاوي', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كبدة</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كبدة', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>لحمة شاورما</h3>
+                <p>300 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('لحمة شاورما', 300)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>لحمة استيك</h3>
+                <p>300 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('لحمة استيك', 300)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>قلب</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('قلب', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>بوفتيك</h3>
+                <p>320 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('بوفتيك', 320)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>عكاوي</h3>
+                <p>350 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('عكاوي', 350)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>لحمة مفرومة</h3>
+                <p>250 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('لحمة مفرومة', 250)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>كفتة أرز</h3>
+                <p>200 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('كفتة أرز', 200)">اطلب الآن</button>
+            </div>
+            <div class="product">
+                <h3>لحمة قطع</h3>
+                <p>300 جنيه</p>
+                <button class="buy-btn" onclick="orderWhatsApp('لحمة قطع', 300)">اطلب الآن</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact">
+        <h2>📦 للتواصل والطلب</h2>
+        <p>واتساب: <a href="https://wa.me/201120194940" target="_blank">01120194940</a></p>
+        <p>رقم الهاتف: 01120194940</p>
+        <p>طرق الدفع: انستا باي كاش</p>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2025</p>
+    </footer>
+
+    <script>
+        function orderWhatsApp(product, price) {
+            let phone = '201120194940';
+            let message = `السلام عليكم، أرغب في طلب ${product} بسعر ${price} جنيه.`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
